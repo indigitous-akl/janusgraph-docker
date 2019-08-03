@@ -30,6 +30,9 @@ services:
       interval: 10s
       timeout: 30s
       retries: 3
+    depends_on:
+      - cassandra
+      - elasticsearch
   cassandra:
     image: cassandra:3
     container_name: jce-cassandra
