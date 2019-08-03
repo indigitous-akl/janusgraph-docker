@@ -36,6 +36,9 @@ services:
   cassandra:
     image: cassandra:3
     container_name: jce-cassandra
+    environment:
+      - "MAX_HEAP_SIZE=1G"
+      - "HEAP_NEWSIZE=256M"
     ports:
       - "9042:9042"
       - "9160:9160"
