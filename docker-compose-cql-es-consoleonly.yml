@@ -19,6 +19,7 @@ networks:
 
 services:
   gremlin-console:
+    container_name: jce-gremlin-consoleonly
     image: janusgraph/janusgraph:latest
     environment:
       GREMLIN_REMOTE_HOSTS: 10.1.1.70
@@ -28,7 +29,6 @@ services:
       janusgraph.index.search.hostname: 10.1.1.70
     stdin_open: yes
     tty: yes
-    #command: gremlin-console
     command: gremlin-console
     networks:
       - consoleonly
